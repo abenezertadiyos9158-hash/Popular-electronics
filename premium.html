@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium - Popular Electronics</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white shadow-md p-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-purple-600">⭐ Premium</h1>
+    <a href="index.html" class="text-blue-600 hover:underline">⬅ Back Home</a>
+  </header>
+
+  <!-- Product Grid -->
+  <main class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="bg-white shadow rounded-xl p-4 flex flex-col">
+      <img src="images/tv.jpg" class="rounded-lg h-40 object-cover" alt="Smart TV">
+      <h2 class="mt-2 font-bold">4K Smart TV</h2>
+      <p class="text-gray-600">$1,499</p>
+      <button onclick="location.href='product-tv.html'" class="mt-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Buy Now</button>
+    </div>
+
+    <div class="bg-white shadow rounded-xl p-4 flex flex-col">
+      <img src="images/camera.jpg" class="rounded-lg h-40 object-cover" alt="Camera">
+      <h2 class="mt-2 font-bold">Pro Camera</h2>
+      <p class="text-gray-600">$1,299</p>
+      <button onclick="location.href='product-camera.html'" class="mt-auto bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700">Buy Now</button>
+    </div>
+  </main>
+
+</body>
+</html>
