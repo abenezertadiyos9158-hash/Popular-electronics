@@ -7,184 +7,95 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/lucide-static/font/lucide.css" rel="stylesheet">
 </head>
-<body class="bg-black text-white min-h-screen flex flex-col">
+<body class="bg-gray-100 text-gray-900 min-h-screen flex flex-col">
 
   <!-- Sticky Header -->
-  <div class="flex items-center justify-between p-4 bg-black sticky top-0 z-50 border-b border-gray-800">
+  <header class="flex items-center justify-between p-4 bg-white sticky top-0 z-50 shadow-sm">
     <h1 class="text-lg font-bold">Popular Electronics</h1>
-    <i class="lucide lucide-search w-6 h-6"></i>
-  </div>
+    <i class="lucide lucide-search w-6 h-6 text-gray-600"></i>
+  </header>
 
-  <!-- Hero Banner -->
-  <div class="px-4 mb-4">
-    <div class="rounded-2xl overflow-hidden bg-gradient-to-r from-orange-400 to-orange-600 text-black p-6 space-y-4">
-      <h2 class="text-xl font-bold">Start Your Day with Electronics</h2>
-      <p class="text-sm">Upload your promotional image here</p>
-      <button class="bg-black text-white rounded-xl px-4 py-2">Shop Now</button>
+  <!-- Hero Section -->
+  <div class="px-4 mt-4 mb-4">
+    <div class="relative rounded-2xl overflow-hidden shadow-md">
+      <img src="images/hero.jpg" alt="Upgrade Your Electronics" class="w-full h-48 object-cover">
+      <div class="absolute inset-0 bg-gradient-to-r from-blue-600/70 to-blue-400/70 flex flex-col justify-center p-6 text-white">
+        <h2 class="text-2xl font-bold">Upgrade Your Electronics</h2>
+        <p class="mt-2">Find the best deals on the latest gadgets.</p>
+        <button class="mt-4 inline-block bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-gray-200 transition">
+          Shop Now
+        </button>
+      </div>
     </div>
   </div>
 
   <!-- Category Tabs -->
-  <div class="flex gap-3 px-4 mb-4">
-    <button class="rounded-xl bg-gray-800 text-white px-4 py-1">Popular</button>
-    <button class="rounded-xl bg-gray-800 text-white px-4 py-1">Newest</button>
-    <button class="rounded-xl bg-gray-800 text-white px-4 py-1">Recommended</button>
+  <div class="flex justify-center space-x-6 mb-4 px-4">
+    <button class="tab-btn font-semibold text-blue-600 border-b-2 border-blue-600" data-tab="popular">Popular</button>
+    <button class="tab-btn text-gray-600" data-tab="newest">Newest</button>
+    <button class="tab-btn text-gray-600" data-tab="recommended">Recommended</button>
   </div>
 
-  <!-- Product Grid -->
-  <div class="grid grid-cols-2 gap-4 px-4 pb-28"> <!-- pb-28 so content not hidden under fixed nav -->
-
-    <!-- Product Cards -->
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Smart Televisions</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
+  <!-- Products -->
+  <div id="popular" class="tab-content grid grid-cols-2 gap-4 px-4 mb-6">
+    <div class="bg-white rounded-lg shadow p-3">
+      <h3 class="font-semibold">Smart Televisions</h3>
+      <p class="text-sm text-gray-500">Electronics</p>
+      <p class="font-bold text-blue-600">$---</p>
     </div>
+    <!-- (More popular product cards) -->
+  </div>
 
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Stoves</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Refrigerators</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Washing Machines</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Multimedia Speakers</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Satellite Receivers and LNB's</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Satellite Parabolic Dishes</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
-    </div>
-
-    <div class="bg-gray-900 rounded-2xl shadow-md p-4 flex flex-col items-center">
-      <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-        <span class="text-xs text-gray-300">Image</span>
-      </div>
-      <h3 class="text-sm font-semibold text-center">Water Dispensers</h3>
-      <p class="text-xs text-gray-400">Electronics</p>
-      <p class="text-sm font-bold mt-1">$---</p>
-      <button class="mt-2 bg-orange-500 text-black rounded-full p-2">
-        <i class="lucide lucide-shopping-cart w-4 h-4"></i>
-      </button>
+  <div id="newest" class="tab-content hidden grid grid-cols-2 gap-4 px-4 mb-6">
+    <div class="bg-white rounded-lg shadow p-3">
+      <h3 class="font-semibold">Newest Item</h3>
+      <p class="text-sm text-gray-500">Electronics</p>
+      <p class="font-bold text-blue-600">$---</p>
     </div>
   </div>
 
-  <!-- Recommended Section -->
-  <div class="px-4 mt-6 pb-28"> <!-- pb-28 ensures not hidden by nav -->
-    <div class="flex items-center justify-between mb-3">
-      <h2 class="text-lg font-bold">Recommended</h2>
-      <button class="text-sm text-orange-400">View All</button>
-    </div>
-    <div class="flex gap-4 overflow-x-auto pb-4">
-      <div class="bg-gray-900 rounded-2xl shadow-md min-w-[150px] p-4 flex flex-col items-center">
-        <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-          <span class="text-xs text-gray-300">Image</span>
-        </div>
-        <h3 class="text-sm font-semibold text-center">Smart Televisions</h3>
-        <p class="text-xs text-gray-400">Electronics</p>
-        <p class="text-sm font-bold mt-1">$---</p>
-      </div>
-      <div class="bg-gray-900 rounded-2xl shadow-md min-w-[150px] p-4 flex flex-col items-center">
-        <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-          <span class="text-xs text-gray-300">Image</span>
-        </div>
-        <h3 class="text-sm font-semibold text-center">Refrigerators</h3>
-        <p class="text-xs text-gray-400">Electronics</p>
-        <p class="text-sm font-bold mt-1">$---</p>
-      </div>
-      <div class="bg-gray-900 rounded-2xl shadow-md min-w-[150px] p-4 flex flex-col items-center">
-        <div class="w-20 h-20 bg-gray-700 rounded-xl mb-3 flex items-center justify-center">
-          <span class="text-xs text-gray-300">Image</span>
-        </div>
-        <h3 class="text-sm font-semibold text-center">Multimedia Speakers</h3>
-        <p class="text-xs text-gray-400">Electronics</p>
-        <p class="text-sm font-bold mt-1">$---</p>
-      </div>
+  <div id="recommended" class="tab-content hidden grid grid-cols-2 gap-4 px-4 mb-6">
+    <div class="bg-white rounded-lg shadow p-3">
+      <h3 class="font-semibold">Recommended Item</h3>
+      <p class="text-sm text-gray-500">Electronics</p>
+      <p class="font-bold text-blue-600">$---</p>
     </div>
   </div>
 
-  <!-- Sticky Bottom Navigation Bar -->
-  <div class="bg-gray-900 p-3 flex justify-around items-center border-t border-gray-800 fixed bottom-0 left-0 right-0 z-50">
-    <button class="flex flex-col items-center text-white">
+  <!-- Sticky Bottom Nav -->
+  <nav class="bg-white p-3 flex justify-around items-center border-t border-gray-300 fixed bottom-0 left-0 right-0 z-50 shadow-inner">
+    <a href="#" class="flex flex-col items-center text-gray-600">
       <i class="lucide lucide-home w-6 h-6"></i>
       <span class="text-xs">Home</span>
-    </button>
-    <button class="flex flex-col items-center text-white">
+    </a>
+    <a href="#" class="flex flex-col items-center text-gray-600">
       <i class="lucide lucide-search w-6 h-6"></i>
       <span class="text-xs">Search</span>
-    </button>
-    <button class="flex flex-col items-center text-white">
-      <i class="lucide lucide-dollar-sign w-6 h-6"></i>
-      <span class="text-xs">Dollar</span>
-    </button>
-    <button class="flex flex-col items-center text-white">
+    </a>
+    <a href="#" class="flex flex-col items-center text-gray-600">
+      <i class="lucide lucide-link w-6 h-6"></i>
+      <span class="text-xs">Affiliate</span>
+    </a>
+    <a href="#" class="flex flex-col items-center text-gray-600">
       <i class="lucide lucide-message-circle w-6 h-6"></i>
       <span class="text-xs">Let's Talk</span>
-    </button>
-  </div>
+    </a>
+  </nav>
+
+  <!-- Tabs JS -->
+  <script>
+    const buttons = document.querySelectorAll('.tab-btn');
+    const contents = document.querySelectorAll('.tab-content');
+
+    buttons.forEach(btn => btn.addEventListener('click', () => {
+      buttons.forEach(b => b.classList.remove('font-semibold','text-blue-600','border-b-2','border-blue-600'));
+      buttons.forEach(b => b.classList.add('text-gray-600'));
+
+      btn.classList.add('font-semibold','text-blue-600','border-b-2','border-blue-600');
+      contents.forEach(c => c.classList.add('hidden'));
+      document.getElementById(btn.dataset.tab).classList.remove('hidden');
+    }));
+  </script>
 
 </body>
 </html>
